@@ -35,12 +35,12 @@ def generate_sample_medical_report(name, age, gender, chest_pain_type, bp, bc, b
     ]
     y_position = 9.5 * inch
     for label, value in details:
-        c.drawString(2 * inch, y_position, label)
-        c.drawString(2.5 * inch, y_position, value)
+        c.drawString(1 * inch, y_position, label)
+        c.drawString(3 * inch, y_position, value)
         y_position -= 0.35 * inch
 
     # Add a line separator
-    c.line(1 * inch, 6.5 * inch, 7.5 * inch, 6.5 * inch)
+    #c.line(1 * inch, 6.5 * inch, 7.5 * inch, 6.5 * inch)
 
     # Add a random diagnosis
     # diagnoses = ["Normal", "High Blood Pressure", "High Glucose", "High Insulin", "High BMI"]

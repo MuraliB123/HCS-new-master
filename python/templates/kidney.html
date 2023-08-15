@@ -1,0 +1,105 @@
+<!--
+  age	blood_pressure	specific_gravity	albumin	sugar	red_blood_cells	pus_cell	pus_cell_clumps	bacteria	blood_glucose_random	...	packed_cell_volume	white_blood_cell_count	red_blood_cell_count	hypertension	diabetes_mellitus	coronary_artery_disease	appetite	peda_edema	aanemia	class
+-->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Management System</title>
+    <link
+      rel="stylesheet"
+      href="../static/style2.css"
+    />
+  </head>
+  <body>
+    <div class="form1">
+      <form method="POST" enctype="multipart/form-data" action="http://127.0.0.1:5000/predict4">
+        <h1> Kidney Care</h1>
+        <br/>
+        <div id="flex-container">
+          <b>
+            <label>age</label>
+            <input type="number" name="a" placeholder="enter" /> <br /><br />
+            <label>blood pressure</label>
+            <input type="number" name="b" placeholder="enter" step="0.01" />
+            <br /><br />
+            <label>specific_gravity</label>
+            <input type="number" name="c" placeholder="enter" step="0.01" />
+            <br /><br />
+            <label>albumin_sugar</label>
+            <input type="number" name="d" placeholder="enter" step="0.01" />
+            <br /><br />
+            <label>red_blood_cells<br>mean</label>
+            <input type="number" name="e" placeholder="enter" step="0.01" />
+            <br /><br />
+            <label>pus_cell</label>
+            <input type="number" name="f" placeholder="enter" step="0.01" />
+            <br />
+            <br />
+            <label>pus_cell_clumps</label>
+            <input type="number" name="g" placeholder="enter" step="0.001" />
+            <br />
+            <br />
+            <label>bacteria</label>
+            <input type="number" name="h" placeholder="enter" /> <br />
+            <br />
+            <br />
+            <label>blood_glucose_random</label>
+            <input type="number" name="i" placeholder="enter" /> <br />
+            <br />
+            <br />
+            <label>blood_urea</label>
+            <input type="number" name="j" placeholder="enter" /> <br />
+            <br />
+            <br />
+            <label>serum_creatinine<br></label>
+            <input type="number" name="k" placeholder="enter" /> <br />
+            <br />
+            <label>sodium<br></label>
+            <input type="number" name="l" placeholder="enter" /> <br />
+            <br />
+            <label>potassium<br></label>
+            <input type="number" name="m" placeholder="enter" /> <br />
+            <br />
+            <label>haemoglobin<br></label>
+            <input type="number" name="n" placeholder="enter" /> <br />
+            <br />
+            <label> packed_cell_volume<br></label>
+            <input type="number" name="o" placeholder="enter" /> <br />
+            <br />
+            <label>white_blood_cell_coun<br></label>
+            <input type="number" name="p" placeholder="enter" /> <br />
+            <br />
+            <label>red_blood_cell_count<br></label>
+            <input type="number" name="q" placeholder="enter" /> <br />
+            <br />
+            <label>hypertension<br></label>
+            <input type="number" name="r" placeholder="enter" /> <br />
+            <br />
+            <label>red_blood_cell_count<br></label>
+            <input type="number" name="s" placeholder="enter" /> <br />
+            <br />
+            <label> diabetes_mellitus<br></label>
+            <input type="number" name="t" placeholder="enter" /> <br />
+            <br />
+            <label>coronary_artery_disease<br></label>
+            <input type="number" name="u" placeholder="enter" /> <br />
+            <br />
+            <label> appetite<br></label>
+            <input type="number" name="v" placeholder="enter" /> <br />
+            <br />
+            <label>peda_edema<br></label>
+            <input type="number" name="w" placeholder="enter" /> <br />
+            <br />
+            <label>aanemia<br></label>
+            <input type="number" name="x" placeholder="enter" /> <br />
+            <br />
+            
+          </b>
+          <input type="submit" , value='predict!' >
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

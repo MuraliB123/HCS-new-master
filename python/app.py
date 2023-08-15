@@ -1106,7 +1106,9 @@ def upload():
                 swallowing_difficulty1=swallowing_difficulty,
                 chest_pain1=chest_pain
             )
-
+	elif datax == 3:
+            name,age,gender,chest_pain_type,bp,bc,bsugar,ecg,heartrate,ex_ind_angina,old_peak,slope,no_vessels_colored,thal = parse_medical_report(result_string)
+            return render_template('cvd.html',name=name,age=age,gender=gender,chest_pain_type=chest_pain_type,bp=bp,bc=bc,bsugar=bsugar,ecg=ecg,heartrate=heartrate,ex_ind_angina=ex_ind_angina,old_peak=old_peak,slope=slope,no_vessels_colored=no_vessels_colored,thal=thal)
     return "Invalid datax value"  # Provide a default return statement if none of the conditions match
 
 
@@ -1196,6 +1198,50 @@ def parse_medical_report_lung(text):
         coughing, shortness_of_breath, swallowing_difficulty, chest_pain
     )
 
+def parse_medical_report(text):
+    name_match = re.search(r'Name:\s*(\w+\s*\w+)', text)
+    name = name_match.group(1) if name_match else "N/A"
+
+    age_match = re.search(r'Age:\s*(\d+)', text)
+    age = int(age_match.group(1)) if age_match else 0
+
+    gender_match = re.search(r'Gender:\s*(\d)', text)
+    gender = int(gender_match.group(1)) if gender_match else 0
+
+    chest_pain_match = re.search(r'Chest pain type:\s*(\d)', text)
+    chest_pain_type = int(chest_pain_match.group(1)) if chest_pain_match else 0
+
+    bp_match = re.search(r'Resting Blood Pressure:\s*(\d+)', text)
+    bp = int(bp_match.group(1)) if bp_match else 0
+
+    bc_match = re.search(r'Blood Cholesterol Level:\s*(\d+)', text)
+    bc = int(bc_match.group(1)) if bc_match else 0
+
+    bsugar_match = re.search(r'Fasting Blood Sugar:\s*(\d)', text)
+    bsugar = int(bsugar_match.group(1)) if bsugar_match else 0
+
+    ecg_match = re.search(r'Resting ECG:\s*(\d)', text)
+    ecg = int(ecg_match.group(1)) if ecg_match else 0
+
+    heartrate_match = re.search(r'Heartrate:\s*(\d+)', text)
+    heartrate = int(heartrate_match.group(1)) if heartrate_match else 0
+
+    ex_ind_angina_match = re.search(r'Rxercise Induced angina:\s*(\d)', text)
+    ex_ind_angina = int(ex_ind_angina_match.group(1)) if ex_ind_angina_match else 0
+
+    old_peak_match = re.search(r'Old peak:\s*([\d.]+)', text)
+    old_peak = float(old_peak_match.group(1)) if old_peak_match else 0.0
+
+    slope_match = re.search(r'Slope:\s*(\d)', text)
+    slope = int(slope_match.group(1)) if slope_match else 0
+
+    no_vessels_colored_match = re.search(r'No\.? of vessels colored:\s*(\d)', text)
+    no_vessels_colored = int(no_vessels_colored_match.group(1)) if no_vessels_colored_match else 0
+
+    thal_match = re.search(r'Thal:\s*(\d)', text)
+    thal = int(thal_match.group(1)) if thal_match else 0
+
+    return name, age, gender, chest_pain_type, bp, bc, bsugar, ecg, heartrate, ex_ind_angina, old_peak, slope, no_vessels_colored, thal
 
 
 
